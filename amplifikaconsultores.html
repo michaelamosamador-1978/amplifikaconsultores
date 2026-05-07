@@ -1,0 +1,1585 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="AMPLIFIKA CONSULTORES — Estrategia Comercial, Ejecutivos Fraccionados y Planeación Financiera para empresas de Venta Directa en LATAM y USA.">
+<meta name="author" content="AMPLIFIKA CONSULTORES">
+<title>AMPLIFIKA CONSULTORES</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #111410;
+    --dark2: #1a1d18;
+    --card: #1e221c;
+    --border: rgba(255,255,255,0.08);
+    --gold: #c8a96e;
+    --gold-light: #e0c898;
+    --text: #e8e6e0;
+    --text-muted: #9a9890;
+    --white: #f5f3ee;
+    --accent-green: #3d5a3e;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--dark);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    padding: 0 5%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+    transition: background 0.4s, border-bottom 0.4s;
+  }
+
+  nav.scrolled {
+    background: rgba(17,20,16,0.96);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .nav-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--gold); }
+
+  .nav-cta {
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold) !important;
+    padding: 0.5rem 1.2rem;
+    border-radius: 2px;
+    transition: background 0.2s, color 0.2s !important;
+  }
+
+  .nav-cta:hover {
+    background: var(--gold) !important;
+    color: var(--dark) !important;
+  }
+
+  .hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 4px;
+  }
+
+  .hamburger span {
+    display: block;
+    width: 24px;
+    height: 1.5px;
+    background: var(--text);
+    transition: all 0.3s;
+  }
+
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    top: 70px; left: 0; right: 0;
+    background: rgba(17,20,16,0.98);
+    backdrop-filter: blur(16px);
+    padding: 2rem 5%;
+    border-bottom: 1px solid var(--border);
+    z-index: 99;
+  }
+
+  .mobile-menu.open { display: block; }
+
+  .mobile-menu a {
+    display: block;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 0.9rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: color 0.2s;
+  }
+
+  .mobile-menu a:hover { color: var(--gold); }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding: 120px 5% 80px;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 60% at 60% 40%, rgba(61,90,62,0.18) 0%, transparent 70%),
+      radial-gradient(ellipse 40% 40% at 85% 80%, rgba(200,169,110,0.08) 0%, transparent 60%);
+  }
+
+  .hero-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+
+  .hero-content {
+    position: relative;
+    max-width: 1100px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeUp 0.8s 0.2s forwards;
+  }
+
+  .hero-tag::before {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(3rem, 7vw, 6.5rem);
+    font-weight: 300;
+    line-height: 1.05;
+    color: var(--white);
+    margin-bottom: 1.8rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.4s forwards;
+  }
+
+  h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-desc {
+    max-width: 560px;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.6s forwards;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeUp 0.9s 0.8s forwards;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--gold);
+    color: var(--dark);
+    padding: 0.9rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border-radius: 2px;
+    transition: background 0.2s, transform 0.2s;
+  }
+
+  .btn-primary:hover {
+    background: var(--gold-light);
+    transform: translateY(-2px);
+  }
+
+  .btn-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: transparent;
+    color: var(--text-muted);
+    padding: 0.9rem 2rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: border-color 0.2s, color 0.2s, transform 0.2s;
+  }
+
+  .btn-ghost:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    transform: translateY(-2px);
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    margin-top: 5rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    opacity: 0;
+    animation: fadeUp 0.9s 1s forwards;
+  }
+
+  .stat-item {
+    background: var(--dark2);
+    padding: 1.5rem 1.2rem;
+    text-align: center;
+  }
+
+  .stat-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+  }
+
+  .stat-label {
+    font-size: 0.72rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+    display: block;
+    text-transform: uppercase;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 6rem 5%;
+  }
+
+  .section-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1rem;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: var(--gold);
+  }
+
+  h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.2rem, 4vw, 3.5rem);
+    font-weight: 300;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 1.5rem;
+  }
+
+  h2 em { font-style: italic; color: var(--gold-light); }
+
+  .section-intro {
+    font-size: 1rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.9;
+    max-width: 620px;
+    margin-bottom: 3.5rem;
+  }
+
+  /* ── NOSOTROS ── */
+  #nosotros { background: var(--dark2); }
+
+  .nosotros-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .nosotros-left h2 { margin-bottom: 1.5rem; }
+
+  .nosotros-left p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;
+  }
+
+  .nosotros-right {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .pillar {
+    background: var(--card);
+    padding: 1.8rem;
+    display: flex;
+    gap: 1.2rem;
+    transition: background 0.2s;
+  }
+
+  .pillar:hover { background: #242820; }
+
+  .pillar-icon {
+    font-size: 1.4rem;
+    flex-shrink: 0;
+    width: 2rem;
+    text-align: center;
+    margin-top: 2px;
+  }
+
+  .pillar h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .pillar p {
+    font-size: 0.85rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .brands-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  .brand-chip {
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.4rem 0.8rem;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    color: var(--text-muted);
+  }
+
+  /* ── SERVICIOS ── */
+  #servicios { background: var(--dark); }
+
+  .servicios-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--border);
+    border: 1px solid var(--border);
+  }
+
+  .servicio-card {
+    background: var(--dark2);
+    padding: 2.5rem;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+
+  .servicio-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--gold);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+
+  .servicio-card:hover { background: var(--card); }
+  .servicio-card:hover::before { transform: scaleX(1); }
+
+  .servicio-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.5rem;
+    font-weight: 300;
+    color: rgba(200,169,110,0.12);
+    line-height: 1;
+    position: absolute;
+    top: 1.5rem;
+    right: 2rem;
+  }
+
+  .servicio-icon {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+  }
+
+  .servicio-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.8rem;
+  }
+
+  .servicio-card p {
+    font-size: 0.87rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+
+  .servicio-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+
+  .tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 0.3rem 0.6rem;
+    background: rgba(200,169,110,0.08);
+    border: 1px solid rgba(200,169,110,0.15);
+    color: var(--gold);
+    border-radius: 2px;
+  }
+
+  /* ── VENTA DIRECTA ── */
+  #venta-directa {
+    background: var(--dark2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  #venta-directa::before {
+    content: '';
+    position: absolute;
+    top: -200px; right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(61,90,62,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .vd-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .vd-expertise {
+    display: flex;
+    flex-direction: column;
+    gap: 0px;
+  }
+
+  .vd-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: 1.4rem 0;
+    border-bottom: 1px solid var(--border);
+    transition: padding-left 0.2s;
+  }
+
+  .vd-item:hover { padding-left: 0.5rem; }
+
+  .vd-item:first-child { padding-top: 0; }
+
+  .vd-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+
+  .vd-item h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.25rem;
+  }
+
+  .vd-item p {
+    font-size: 0.83rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .vd-right {
+    position: relative;
+  }
+
+  .highlight-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .highlight-card .big-num {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    font-weight: 300;
+    color: var(--gold);
+    line-height: 1;
+    display: block;
+    margin-bottom: 0.4rem;
+  }
+
+  .highlight-card p {
+    font-size: 0.87rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  .highlight-card .source {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(154,152,144,0.5);
+    margin-top: 0.8rem;
+    display: block;
+  }
+
+  /* ── EJECUTIVOS FRACCIONADOS ── */
+  #fraccionados {
+    background: var(--dark);
+  }
+
+  .frac-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .frac-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .frac-card {
+    background: var(--dark2);
+    padding: 1.8rem 1.4rem;
+    text-align: center;
+  }
+
+  .frac-card .frac-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .frac-card h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--white);
+    margin-bottom: 0.4rem;
+  }
+
+  .frac-card p {
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.6;
+  }
+
+  .frac-left .section-intro {
+    max-width: 100%;
+  }
+
+  .frac-comparison {
+    margin-top: 2rem;
+  }
+
+  .comp-row {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.83rem;
+  }
+
+  .comp-label {
+    flex: 1;
+    color: var(--text-muted);
+    font-weight: 300;
+  }
+
+  .comp-val {
+    display: flex;
+    gap: 2rem;
+  }
+
+  .comp-val span:first-child { color: rgba(154,152,144,0.5); width: 120px; text-align: center; }
+  .comp-val span:last-child { color: var(--gold); width: 120px; text-align: center; }
+
+  .comp-header {
+    display: flex;
+    align-items: center;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .comp-header .comp-label { flex: 1; }
+
+  /* ── CTA BANNER ── */
+  #cta {
+    background: var(--accent-green);
+    padding: 5rem 5%;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #cta::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(200,169,110,0.08) 0%, transparent 60%);
+  }
+
+  .cta-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+    position: relative;
+  }
+
+  .cta-text h2 {
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    margin-bottom: 0.8rem;
+  }
+
+  .cta-text p {
+    font-size: 0.95rem;
+    font-weight: 300;
+    color: rgba(232,230,224,0.7);
+  }
+
+  /* ── BLOG ── */
+  #blog { background: var(--dark2); }
+
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--border);
+  }
+
+  .blog-card {
+    background: var(--dark);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    transition: background 0.2s;
+  }
+
+  .blog-card:hover { background: var(--card); }
+
+  .blog-tag {
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.8rem;
+    display: block;
+  }
+
+  .blog-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1.35;
+    margin-bottom: 0.8rem;
+    flex: 1;
+  }
+
+  .blog-card p {
+    font-size: 0.83rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-link {
+    font-size: 0.75rem;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: gap 0.2s;
+  }
+
+  .blog-link:hover { gap: 0.8rem; }
+
+  /* ── CONTACTO ── */
+  #contacto { background: var(--dark); }
+
+  .contacto-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .contact-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .contact-item {
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .contact-item .ci-icon {
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    width: 2rem;
+    text-align: center;
+    color: var(--gold);
+    margin-top: 2px;
+  }
+
+  .contact-item h5 {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+  }
+
+  .contact-item p, .contact-item a {
+    font-size: 0.92rem;
+    font-weight: 300;
+    color: var(--text);
+    text-decoration: none;
+    transition: color 0.2s;
+    line-height: 1.6;
+  }
+
+  .contact-item a:hover { color: var(--gold); }
+
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-muted);
+  }
+
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    background: var(--dark2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 0.8rem 1rem;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.88rem;
+    font-weight: 300;
+    border-radius: 2px;
+    outline: none;
+    transition: border-color 0.2s;
+    -webkit-appearance: none;
+  }
+
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus {
+    border-color: var(--gold);
+  }
+
+  .form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+  }
+
+  .form-group select option {
+    background: var(--dark2);
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--dark2);
+    border-top: 1px solid var(--border);
+    padding: 3rem 5% 2rem;
+  }
+
+  .footer-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    color: var(--gold);
+    text-transform: uppercase;
+  }
+
+  .footer-brand p {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 300;
+    color: var(--text-muted);
+    margin-top: 0.4rem;
+    letter-spacing: 0;
+  }
+
+  .footer-nav {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .footer-nav a {
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.78rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+
+  .footer-nav a:hover { color: var(--gold); }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(154,152,144,0.5);
+  }
+
+  .footer-linkedin {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .footer-linkedin:hover { color: var(--gold); }
+
+  /* ── DIVIDER ── */
+  .divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .nav-links { display: none; }
+    .hamburger { display: flex; }
+    .stats-bar { grid-template-columns: repeat(2, 1fr); }
+    .nosotros-grid,
+    .vd-grid,
+    .frac-grid,
+    .contacto-grid { grid-template-columns: 1fr; gap: 3rem; }
+    .servicios-grid { grid-template-columns: 1fr; }
+    .blog-grid { grid-template-columns: 1fr; }
+    .cta-inner { flex-direction: column; text-align: center; }
+    .frac-cards { grid-template-columns: 1fr 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .footer-top { flex-direction: column; gap: 1.5rem; }
+    .footer-nav { flex-wrap: wrap; gap: 1rem; }
+    .footer-bottom { flex-direction: column; gap: 0.8rem; text-align: center; }
+  }
+
+  @media (max-width: 500px) {
+    .stats-bar { grid-template-columns: 1fr 1fr; }
+    .frac-cards { grid-template-columns: 1fr; }
+    h1 { font-size: 2.8rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <a href="#hero" class="nav-logo">Amplifika</a>
+  <ul class="nav-links">
+    <li><a href="#nosotros">Nosotros</a></li>
+    <li><a href="#servicios">Servicios</a></li>
+    <li><a href="#venta-directa">Venta Directa</a></li>
+    <li><a href="#fraccionados">Ejecutivos Frac.</a></li>
+    <li><a href="#blog">Insights</a></li>
+    <li><a href="#contacto" class="nav-cta">Primera Consulta</a></li>
+  </ul>
+  <button class="hamburger" id="hamburger" aria-label="Menú">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#nosotros" onclick="closeMobile()">Nosotros</a>
+  <a href="#servicios" onclick="closeMobile()">Servicios</a>
+  <a href="#venta-directa" onclick="closeMobile()">Venta Directa</a>
+  <a href="#fraccionados" onclick="closeMobile()">Ejecutivos Fraccionados</a>
+  <a href="#blog" onclick="closeMobile()">Insights</a>
+  <a href="#contacto" onclick="closeMobile()">Primera Consulta Sin Costo →</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+    <div class="hero-tag">Estrategia Comercial · LATAM & USA</div>
+    <h1>Decisiones<br>que <em>amplifican</em><br>tu negocio.</h1>
+    <p class="hero-desc">Consultoría de alto nivel en estrategia comercial, planeación financiera y ejecución para empresas de venta directa y retail. Más de 19 años de experiencia en mercados de México, LATAM y USA.</p>
+    <div class="hero-actions">
+      <a href="#contacto" class="btn-primary">Primera consulta sin costo →</a>
+      <a href="#servicios" class="btn-ghost">Ver servicios</a>
+    </div>
+    <div class="stats-bar">
+      <div class="stat-item">
+        <span class="stat-num">19+</span>
+        <span class="stat-label">Años de experiencia</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">450K</span>
+        <span class="stat-label">Distribuidores gestionados</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">$100M+</span>
+        <span class="stat-label">P&L bajo gestión</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">+28%</span>
+        <span class="stat-label">Crecimiento acumulado</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── NOSOTROS ── -->
+<section id="nosotros">
+  <div class="section-inner">
+    <div class="nosotros-grid">
+      <div class="nosotros-left reveal">
+        <div class="section-label">Sobre Amplifika</div>
+        <h2>Tu socio estratégico<br>en <em>venta directa.</em></h2>
+        <p>Somos una firma de consultoría especializada en empresas de venta directa, retail y modelos de distribución en red. Ayudamos a líderes y organizaciones a tomar decisiones estratégicas claras en entornos complejos y cambiantes.</p>
+        <p>Nuestro diferenciador es simple: entendemos el negocio desde adentro. Hemos dirigido operaciones con cientos de miles de distribuidores, gestionado P&Ls de $100M+ y liderado transformaciones comerciales en los mercados más competitivos de LATAM.</p>
+        <p>No enviamos frameworks genéricos. Llevamos experiencia probada directamente a tu mesa de decisiones.</p>
+        <div class="brands-row">
+          <span class="brand-chip">Avon</span>
+          <span class="brand-chip">Natura</span>
+          <span class="brand-chip">Fuller Cosmetics</span>
+          <span class="brand-chip">ANDREA</span>
+          <span class="brand-chip">Pfizer</span>
+          <span class="brand-chip">Coca-Cola FEMSA</span>
+        </div>
+      </div>
+      <div class="nosotros-right reveal">
+        <div class="pillar">
+          <div class="pillar-icon">⚡</div>
+          <div>
+            <h4>Claridad estratégica inmediata</h4>
+            <p>Diagnóstico rápido de tu modelo comercial. Sin rodeos: identificamos las palancas de crecimiento y los cuellos de botella que frenan tu P&L.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">📊</div>
+          <div>
+            <h4>Decisiones basadas en datos</h4>
+            <p>Análisis financiero, benchmarking competitivo y modelos de proyección para que cada decisión esté respaldada por evidencia, no por intuición.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🚀</div>
+          <div>
+            <h4>Ejecución que genera resultados</h4>
+            <p>No solo estrategia en papel. Acompañamos la implementación, formamos equipos y medimos el impacto real en ventas, red y rentabilidad.</p>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon">🌎</div>
+          <div>
+            <h4>Visión LATAM & USA</h4>
+            <p>Experiencia directa en México, Norte LATAM y mercados hispanos de USA. Conocemos las particularidades regulatorias, culturales y competitivas de cada mercado.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── SERVICIOS ── -->
+<section id="servicios">
+  <div class="section-inner">
+    <div class="section-label reveal">Nuestros servicios</div>
+    <h2 class="reveal">Lo que hacemos <em>mejor.</em></h2>
+    <p class="section-intro reveal">Cuatro líneas de servicio diseñadas para los retos reales de empresas en crecimiento — desde la estrategia hasta la ejecución en campo.</p>
+    <div class="servicios-grid reveal">
+
+      <div class="servicio-card">
+        <span class="servicio-num">01</span>
+        <div class="servicio-icon">🧭</div>
+        <h3>Estrategia Comercial & Go-to-Market</h3>
+        <p>Diseño de modelos de negocio, estrategias de penetración de mercado y planes de expansión para empresas de venta directa y retail. Desde el diagnóstico hasta el plan de acción ejecutable con métricas de seguimiento.</p>
+        <div class="servicio-tags">
+          <span class="tag">Modelo de negocio</span>
+          <span class="tag">Expansión de mercado</span>
+          <span class="tag">Segmentación</span>
+          <span class="tag">Pricing</span>
+        </div>
+      </div>
+
+      <div class="servicio-card">
+        <span class="servicio-num">02</span>
+        <div class="servicio-icon">💰</div>
+        <h3>Planeación Financiera & Control de P&L</h3>
+        <p>Planeación presupuestaria, análisis de rentabilidad por canal, diseño de incentivos económicos y gestión de P&L. Transformamos la información financiera en decisiones comerciales accionables.</p>
+        <div class="servicio-tags">
+          <span class="tag">Presupuesto</span>
+          <span class="tag">P&L management</span>
+          <span class="tag">FP&A</span>
+          <span class="tag">Incentivos económicos</span>
+        </div>
+      </div>
+
+      <div class="servicio-card">
+        <span class="servicio-num">03</span>
+        <div class="servicio-icon">🔄</div>
+        <h3>Transformación Digital Comercial</h3>
+        <p>Incorporación de habilitadores digitales al modelo de venta directa: herramientas de gestión de fuerza de ventas, analítica de red, automatización de incentivos y digitalización de procesos comerciales.</p>
+        <div class="servicio-tags">
+          <span class="tag">Digital enablers</span>
+          <span class="tag">Automatización</span>
+          <span class="tag">Analytics</span>
+          <span class="tag">CRM</span>
+        </div>
+      </div>
+
+      <div class="servicio-card">
+        <span class="servicio-num">04</span>
+        <div class="servicio-icon">🎯</div>
+        <h3>Diseño de Compensación & Modelos MLM</h3>
+        <p>Diseño y optimización de planes de compensación, estructuras de incentivos y modelos de red para empresas de venta directa, MLM y marcas de wellness, belleza o financieras.</p>
+        <div class="servicio-tags">
+          <span class="tag">Plan de compensación</span>
+          <span class="tag">MLM design</span>
+          <span class="tag">Incentivos de campo</span>
+          <span class="tag">Modelo de afiliados</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── VENTA DIRECTA ── -->
+<section id="venta-directa">
+  <div class="section-inner">
+    <div class="vd-grid">
+      <div class="reveal">
+        <div class="section-label">Especialidad central</div>
+        <h2>Venta directa es<br><em>nuestra industria.</em></h2>
+        <p class="section-intro">Con más de 19 años en las empresas más importantes del sector — Avon, Natura, Fuller Cosmetics — hemos vivido cada arista del modelo. Estas son las áreas donde nuestro expertise es más profundo:</p>
+        <div class="vd-expertise">
+          <div class="vd-item">
+            <div class="vd-dot"></div>
+            <div>
+              <h4>Gestión de Fuerza de Ventas Masiva</h4>
+              <p>Estructuras de liderazgo, programas de reconocimiento y estrategias de retención para redes de +100K distribuidores.</p>
+            </div>
+          </div>
+          <div class="vd-item">
+            <div class="vd-dot"></div>
+            <div>
+              <h4>Modelos de Captación & Retención de Red</h4>
+              <p>Diseño de journeys de incorporación, mecanismos de activación y programas que reducen la rotación de distribuidores.</p>
+            </div>
+          </div>
+          <div class="vd-item">
+            <div class="vd-dot"></div>
+            <div>
+              <h4>Estrategia de Catálogo & Portafolio</h4>
+              <p>Arquitectura de producto, pricing competitivo, lanzamientos de campaña y optimización del mix por canal y zona.</p>
+            </div>
+          </div>
+          <div class="vd-item">
+            <div class="vd-dot"></div>
+            <div>
+              <h4>Operaciones Multi-canal</h4>
+              <p>Integración de venta directa con retail, contact center y e-commerce para una experiencia de cliente coherente.</p>
+            </div>
+          </div>
+          <div class="vd-item">
+            <div class="vd-dot"></div>
+            <div>
+              <h4>Analítica de Red & Reporting Comercial</h4>
+              <p>Dashboards de gestión, KPIs de productividad por nivel y modelos predictivos de comportamiento de la red.</p>
+            </div>
+          </div>
+          <div class="vd-item">
+            <div class="vd-dot"></div>
+            <div>
+              <h4>Formación & Habilitación de Líderes</h4>
+              <p>Programas de desarrollo para líderes de zona y gerentes de distrito que aceleran la curva de productividad.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reveal">
+        <div class="highlight-card">
+          <span class="big-num">450K+</span>
+          <p>Representantes de venta directa bajo gestión directa en operaciones de Norte LATAM — el ecosistema más complejo del sector en la región.</p>
+          <span class="source">Avon Cosmetics — Director de Transformación de Negocio</span>
+        </div>
+        <div class="highlight-card">
+          <span class="big-num">+28%</span>
+          <p>Crecimiento de ingresos acumulado durante el período de liderazgo en estrategia comercial e innovación para el mercado mexicano.</p>
+          <span class="source">Natura Cosmetics — Director de Innovación Comercial</span>
+        </div>
+        <div class="highlight-card">
+          <span class="big-num">+$200K</span>
+          <p>Ingresos generados para clientes en los primeros 6 meses de operación como consultor independiente — diseño de modelos de compensación y estrategia comercial.</p>
+          <span class="source">Amplifika Consultores — 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── EJECUTIVOS FRACCIONADOS ── -->
+<section id="fraccionados">
+  <div class="section-inner">
+    <div class="frac-grid">
+      <div class="frac-left reveal">
+        <div class="section-label">Modelo de servicio</div>
+        <h2>Liderazgo experto<br><em>cuando lo necesitas.</em></h2>
+        <p class="section-intro">Contratar un C-level a tiempo completo no siempre es la decisión correcta. Un Ejecutivo Fraccionado te da el talento y la experiencia de un director senior — a la fracción del costo y en el tiempo que tu empresa realmente necesita.</p>
+        <div class="frac-comparison">
+          <div class="comp-header">
+            <span class="comp-label">Criterio</span>
+            <div class="comp-val">
+              <span>C-Level Full-time</span>
+              <span>Ejec. Fraccionado</span>
+            </div>
+          </div>
+          <div class="comp-row">
+            <span class="comp-label">Disponibilidad</span>
+            <div class="comp-val">
+              <span>Inmediata (3–6 meses)</span>
+              <span>Inmediata ✓</span>
+            </div>
+          </div>
+          <div class="comp-row">
+            <span class="comp-label">Costo mensual</span>
+            <div class="comp-val">
+              <span>$150K–$300K+ MXN</span>
+              <span>Fracción ✓</span>
+            </div>
+          </div>
+          <div class="comp-row">
+            <span class="comp-label">Flexibilidad</span>
+            <div class="comp-val">
+              <span>Contrato fijo</span>
+              <span>A la medida ✓</span>
+            </div>
+          </div>
+          <div class="comp-row">
+            <span class="comp-label">Expertise comprobado</span>
+            <div class="comp-val">
+              <span>Variable</span>
+              <span>19+ años ✓</span>
+            </div>
+          </div>
+          <div class="comp-row">
+            <span class="comp-label">Impacto desde día 1</span>
+            <div class="comp-val">
+              <span>6–12 meses</span>
+              <span>Desde semana 1 ✓</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="frac-cards reveal">
+        <div class="frac-card">
+          <span class="frac-icon">🏛️</span>
+          <h4>Director Comercial Fraccionado</h4>
+          <p>Estrategia de ventas, gestión de canales y liderazgo de equipos comerciales</p>
+        </div>
+        <div class="frac-card">
+          <span class="frac-icon">📈</span>
+          <h4>Director Financiero Fraccionado</h4>
+          <p>FP&A, control de P&L, modelado financiero y planeación presupuestaria</p>
+        </div>
+        <div class="frac-card">
+          <span class="frac-icon">🔗</span>
+          <h4>Director de Transformación</h4>
+          <p>Digitalización del modelo comercial, implementación de herramientas y gestión del cambio</p>
+        </div>
+        <div class="frac-card">
+          <span class="frac-icon">🌱</span>
+          <h4>Director de Expansión LATAM</h4>
+          <p>Go-to-market en nuevos mercados, adaptación del modelo de venta directa por país</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section id="cta">
+  <div class="cta-inner">
+    <div class="cta-text">
+      <h2>¿Tu negocio necesita<br><em>claridad estratégica?</em></h2>
+      <p>Primera sesión de diagnóstico sin costo · Sin compromisos · 100% confidencial</p>
+    </div>
+    <a href="#contacto" class="btn-primary" style="flex-shrink:0; font-size:0.85rem; padding:1rem 2.5rem;">Agendar consulta →</a>
+  </div>
+</section>
+
+<!-- ── BLOG / INSIGHTS ── -->
+<section id="blog">
+  <div class="section-inner">
+    <div class="section-label reveal">Insights & Conocimiento</div>
+    <h2 class="reveal">Navegando el <em>éxito comercial.</em></h2>
+    <p class="section-intro reveal">Perspectivas prácticas sobre venta directa, estrategia comercial y transformación de negocios para líderes en LATAM.</p>
+    <div class="blog-grid reveal">
+
+      <div class="blog-card">
+        <span class="blog-tag">Estrategia Comercial</span>
+        <h3>Por qué el 70% de los modelos MLM fallan en México en los primeros 3 años</h3>
+        <p>Los errores más comunes en diseño de compensación, captación de red y posicionamiento competitivo — y cómo evitarlos desde el diseño.</p>
+        <a href="#contacto" class="blog-link">Solicitar artículo completo →</a>
+      </div>
+
+      <div class="blog-card">
+        <span class="blog-tag">Ejecutivos Fraccionados</span>
+        <h3>Cuándo un Director Fraccionado es la mejor decisión para una empresa en crecimiento</h3>
+        <p>El momento de contratar talento senior a tiempo completo vs. cuando un modelo fraccionado genera más valor por peso invertido.</p>
+        <a href="#contacto" class="blog-link">Solicitar artículo completo →</a>
+      </div>
+
+      <div class="blog-card">
+        <span class="blog-tag">Planeación Financiera</span>
+        <h3>Cómo construir un P&L por canal que realmente impulse decisiones comerciales</h3>
+        <p>Guía práctica para líderes comerciales que quieren conectar los números financieros con las decisiones de campo y de portafolio.</p>
+        <a href="#contacto" class="blog-link">Solicitar artículo completo →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACTO ── -->
+<section id="contacto">
+  <div class="section-inner">
+    <div class="contacto-grid">
+      <div class="reveal">
+        <div class="section-label">Contáctanos</div>
+        <h2>Hablemos de<br><em>tu negocio.</em></h2>
+        <p class="section-intro" style="margin-bottom:0">La primera sesión de diagnóstico es sin costo y sin compromiso. En 60 minutos identificamos las 3 palancas de mayor impacto para tu empresa.</p>
+        <div class="contact-details">
+          <div class="contact-item">
+            <span class="ci-icon">📍</span>
+            <div>
+              <h5>Dirección</h5>
+              <p>Louisiana 80, Nápoles<br>Ciudad de México, CDMX, México</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-icon">📱</span>
+            <div>
+              <h5>Teléfono / WhatsApp</h5>
+              <a href="tel:+525520464816">+52 55 2046 4816</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-icon">✉️</span>
+            <div>
+              <h5>Email</h5>
+              <a href="mailto:mike@amplifikaconsultores.com">mike@amplifikaconsultores.com</a>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="ci-icon">💼</span>
+            <div>
+              <h5>LinkedIn</h5>
+              <a href="https://www.linkedin.com/in/michaelamosamador" target="_blank">in/michaelamosamador</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form reveal">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre completo">
+          </div>
+          <div class="form-group">
+            <label>Empresa</label>
+            <input type="text" placeholder="Nombre de la empresa">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label>Email</label>
+            <input type="email" placeholder="correo@empresa.com">
+          </div>
+          <div class="form-group">
+            <label>WhatsApp / Teléfono</label>
+            <input type="tel" placeholder="+52 55 0000 0000">
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Servicio de interés</label>
+          <select>
+            <option value="">Selecciona una opción</option>
+            <option>Estrategia Comercial & Go-to-Market</option>
+            <option>Planeación Financiera & Control de P&L</option>
+            <option>Transformación Digital Comercial</option>
+            <option>Diseño de Compensación & Modelos MLM</option>
+            <option>Ejecutivo Fraccionado</option>
+            <option>No sé todavía — quiero una sesión de diagnóstico</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Cuéntanos el reto</label>
+          <textarea placeholder="¿Cuál es el principal reto o pregunta estratégica que enfrenta tu empresa hoy?"></textarea>
+        </div>
+        <button class="btn-primary" onclick="handleSubmit()" style="width:100%; justify-content:center; cursor:pointer; border:none;">Agendar primera consulta sin costo →</button>
+        <p style="font-size:0.72rem; color:var(--text-muted); text-align:center; margin-top:0.6rem;">Respondemos en menos de 24 horas · 100% confidencial</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        Amplifika Consultores
+        <p>Estrategia Comercial · Venta Directa · LATAM & USA</p>
+      </div>
+      <ul class="footer-nav">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#venta-directa">Venta Directa</a></li>
+        <li><a href="#fraccionados">Ejec. Fraccionados</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2026 AMPLIFIKA CONSULTORES · Todos los derechos reservados.</span>
+      <a href="https://www.linkedin.com/in/michaelamosamador" target="_blank" class="footer-linkedin">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        Michael Amos Amador
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // NAV SCROLL
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 40);
+  });
+
+  // MOBILE MENU
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+
+  // REVEAL ON SCROLL
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // FORM SUBMIT (placeholder)
+  function handleSubmit() {
+    const btn = event.target;
+    btn.textContent = '✓ Mensaje enviado — te contactamos pronto';
+    btn.style.background = 'var(--accent-green)';
+    btn.style.color = 'var(--white)';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
