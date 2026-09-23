@@ -310,7 +310,114 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
   .founder-top{flex-direction:column}
   .founder-photo,.founder-initials{width:72px;height:72px}
 }
+.amp-faq-list{max-width:860px}
+.amp-faq-list details{border-bottom:1px solid var(--border2);padding:1.3rem 0}
+.amp-faq-list summary{cursor:pointer;font-weight:600;font-size:1rem;list-style:none;display:flex;justify-content:space-between;gap:1rem;color:var(--text)}
+.amp-faq-list summary::-webkit-details-marker{display:none}
+.amp-faq-list summary::after{content:"+";color:var(--turquesa);font-size:1.4rem;line-height:1;flex-shrink:0}
+.amp-faq-list details[open] summary::after{content:"–"}
+.amp-faq-list details p{margin:.8rem 0 0;color:var(--muted);line-height:1.7;font-size:.92rem}
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.amplifikate.com/#org",
+      "name": "Amplifika Consultores",
+      "alternateName": ["Amplifika", "Amplifikate"],
+      "url": "https://www.amplifikate.com/",
+      "logo": "https://www.amplifikate.com/brand/logo-amplifika-horizontal-light.png",
+      "image": "https://www.amplifikate.com/brand/og-amplifika-1200x630.jpg",
+      "slogan": "Decisiones que amplifican tu negocio",
+      "description": "Consultoría en estrategia comercial, finanzas y transformación de negocios para PyMEs, empresas familiares, firmas de servicios profesionales y compañías de venta directa en México, LATAM y USA. Directores comerciales y financieros fraccionados.",
+      "email": "mike@amplifikaconsultores.com",
+      "telephone": "+52 55 2046 4816",
+      "priceRange": "$$$",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Louisiana 80, Col. Nápoles",
+        "addressLocality": "Ciudad de México",
+        "addressRegion": "CDMX",
+        "addressCountry": "MX"
+      },
+      "areaServed": [
+        {"@type": "Country", "name": "México"},
+        {"@type": "Place", "name": "Latinoamérica"},
+        {"@type": "Country", "name": "Estados Unidos"}
+      ],
+      "knowsLanguage": ["es", "en"],
+      "founder": [
+        {"@id": "https://www.amplifikate.com/#mike"},
+        {"@id": "https://www.amplifikate.com/#elias"}
+      ],
+      "sameAs": [
+        "https://www.linkedin.com/in/michaelamosamador"
+      ],
+      "knowsAbout": [
+        "Estrategia comercial", "Go-to-Market", "Planeación financiera", "FP&A",
+        "Rentabilidad y P&L", "Transformación de negocios", "Institucionalización de empresas",
+        "Escalar un negocio sin depender del fundador", "Venta directa", "Multinivel",
+        "Planes de compensación", "Ejecutivos fraccionados", "KPIs y sistemas de gestión"
+      ],
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Servicios de Amplifika Consultores",
+        "itemListElement": [
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Estrategia Comercial y Go-to-Market", "description": "Rutas de crecimiento, segmentación, pricing, canales y prioridades comerciales."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Finanzas y Rentabilidad", "description": "P&L, FP&A, presupuesto, escenarios y control de gestión."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Transformación de Negocios", "description": "Procesos, tecnología, CRM e IA aplicada con foco en ROI."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Venta Directa y Redes", "description": "Modelos comerciales, compensación, incentivos, captación y retención de distribuidores."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Growth Operating System", "description": "Sistema de gestión para empresas que crecieron y necesitan dejar de depender del fundador: KPIs, cadencia, responsables y organización."}},
+          {"@type": "Offer", "itemOffered": {"@type": "Service", "name": "Dirección Fraccionada", "description": "Director Comercial, Financiero, de Transformación o de Expansión LATAM por 3 a 12 meses."}}
+        ]
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.amplifikate.com/#mike",
+      "name": "Michael Amos Amador",
+      "jobTitle": "Cofundador · Estrategia Comercial y Transformación",
+      "worksFor": {"@id": "https://www.amplifikate.com/#org"},
+      "image": "https://www.amplifikate.com/brand/mike-amos.jpg",
+      "sameAs": ["https://www.linkedin.com/in/michaelamosamador"],
+      "knowsAbout": ["Venta directa", "Estrategia comercial", "Transformación de negocios", "Dirección comercial fraccionada"]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.amplifikate.com/#elias",
+      "name": "Elías Méndez Gómez",
+      "jobTitle": "Cofundador · Finanzas, FP&A y Transformación",
+      "worksFor": {"@id": "https://www.amplifikate.com/#org"},
+      "image": "https://www.amplifikate.com/brand/elias-mendez.jpg",
+      "alumniOf": [
+        {"@type": "CollegeOrUniversity", "name": "Universidad Nacional Autónoma de México (UNAM)"},
+        {"@type": "CollegeOrUniversity", "name": "Instituto Politécnico Nacional (IPN)"}
+      ],
+      "knowsAbout": ["FP&A", "Finanzas corporativas", "P&L", "Dirección financiera fraccionada"]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.amplifikate.com/#faq",
+      "mainEntity": [
+        {"@type": "Question", "name": "Mi empresa depende totalmente de mí. ¿Cómo la convierto en una organización que crezca sin mí?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Empezamos por identificar qué decisiones, clientes y procesos pasan hoy por el fundador. Después diseñamos el modelo objetivo: estructura, roles, procesos, metodología propia, indicadores y modelo comercial, y acompañamos la transición por etapas para que la empresa gane autonomía sin perder resultados. Es el núcleo de nuestro Growth Operating System."}},
+        {"@type": "Question", "name": "Soy un profesional de alto desempeño (agente, consultor, médico). ¿Pueden ayudarme a construir una firma?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Sí. Trabajamos con profesionales y despachos que quieren pasar de práctica individual a firma: definimos portafolio de servicios y líneas de negocio, metodología propia, proceso comercial, equipo, P&L y plan de crecimiento."}},
+        {"@type": "Question", "name": "¿Qué es un director fraccionado y cuándo conviene?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Es un director comercial o financiero senior que trabaja con tu empresa unos días por semana o por mes, durante 3 a 12 meses. Conviene cuando necesitas experiencia de nivel director para una etapa concreta —crecimiento, reestructura, expansión— sin el costo ni el compromiso de una posición de tiempo completo."}},
+        {"@type": "Question", "name": "¿Solo trabajan con empresas de venta directa?",
+         "acceptedAnswer": {"@type": "Answer", "text": "No. La venta directa es nuestra especialidad más profunda, pero trabajamos con PyMEs, empresas familiares, clínicas, despachos, firmas de servicios profesionales, distribuidoras y marcas de consumo en México, LATAM y USA."}},
+        {"@type": "Question", "name": "¿Cómo empieza un proyecto con Amplifika?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Con una sesión de diagnóstico sin costo de 60 minutos donde identificamos las tres palancas de mayor impacto. Si hay un proyecto, proponemos alcance, entregables, tiempos y honorarios por escrito."}},
+        {"@type": "Question", "name": "¿Trabajan de forma remota o presencial?",
+         "acceptedAnswer": {"@type": "Answer", "text": "Ambas. Tenemos base en Ciudad de México y trabajamos de forma remota con clientes en todo México, LATAM y mercados hispanos de USA, con sesiones presenciales cuando el proyecto lo requiere."}}
+      ]
+    }
+  ]
+}
+</script>
 </head>
 
 <body>
@@ -344,6 +451,7 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
   <a href="#venta-directa" onclick="closeMobile()">Venta Directa</a>
   <a href="#fraccionados" onclick="closeMobile()">Ejec. Fraccionados</a>
   <a href="#perspectiva" onclick="closeMobile()">Perspectiva</a>
+  <a href="#faq" onclick="closeMobile()">Preguntas frecuentes</a>
   <a href="#contacto" onclick="closeMobile()" class="mcta">Agenda consulta →</a>
 </div>
 
@@ -712,6 +820,43 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
 </section>
 
 
+<!-- ══ PREGUNTAS FRECUENTES ══ -->
+<section id="faq">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">Preguntas frecuentes</div>
+      <h2>Lo que nos preguntan<br><em>antes de empezar.</em></h2>
+    </div>
+    <div class="amp-faq-list reveal">
+      <details>
+    <summary>Mi empresa depende totalmente de mí. ¿Cómo la convierto en una organización que crezca sin mí?</summary>
+    <p>Empezamos por identificar qué decisiones, clientes y procesos pasan hoy por el fundador. Después diseñamos el modelo objetivo: estructura, roles, procesos, metodología propia, indicadores y modelo comercial, y acompañamos la transición por etapas para que la empresa gane autonomía sin perder resultados. Es el núcleo de nuestro Growth Operating System.</p>
+  </details>
+      <details>
+    <summary>Soy un profesional de alto desempeño (agente, consultor, médico). ¿Pueden ayudarme a construir una firma?</summary>
+    <p>Sí. Trabajamos con profesionales y despachos que quieren pasar de práctica individual a firma: definimos portafolio de servicios y líneas de negocio, metodología propia, proceso comercial, equipo, P&amp;L y plan de crecimiento.</p>
+  </details>
+      <details>
+    <summary>¿Qué es un director fraccionado y cuándo conviene?</summary>
+    <p>Es un director comercial o financiero senior que trabaja con tu empresa unos días por semana o por mes, durante 3 a 12 meses. Conviene cuando necesitas experiencia de nivel director para una etapa concreta —crecimiento, reestructura, expansión— sin el costo ni el compromiso de una posición de tiempo completo.</p>
+  </details>
+      <details>
+    <summary>¿Solo trabajan con empresas de venta directa?</summary>
+    <p>No. La venta directa es nuestra especialidad más profunda, pero trabajamos con PyMEs, empresas familiares, clínicas, despachos, firmas de servicios profesionales, distribuidoras y marcas de consumo en México, LATAM y USA.</p>
+  </details>
+      <details>
+    <summary>¿Cómo empieza un proyecto con Amplifika?</summary>
+    <p>Con una sesión de diagnóstico sin costo de 60 minutos donde identificamos las tres palancas de mayor impacto. Si hay un proyecto, proponemos alcance, entregables, tiempos y honorarios por escrito.</p>
+  </details>
+      <details>
+    <summary>¿Trabajan de forma remota o presencial?</summary>
+    <p>Ambas. Tenemos base en Ciudad de México y trabajamos de forma remota con clientes en todo México, LATAM y mercados hispanos de USA, con sesiones presenciales cuando el proyecto lo requiere.</p>
+  </details>
+    </div>
+  </div>
+</section>
+
+
 <!-- ══ CONTACTO ══ -->
 <section id="contacto">
   <div class="section-inner">
@@ -751,6 +896,18 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
               <option value="diagnostico">No sé todavía — quiero una sesión de diagnóstico</option>
             </select>
           </div>
+          <div class="form-group">
+            <label for="fuente">¿Cómo nos conociste?</label>
+            <select id="fuente" name="como_nos_conociste">
+              <option value="">Selecciona una opción</option>
+              <option value="ChatGPT / asistente de IA">ChatGPT u otro asistente de IA</option>
+              <option value="Google">Búsqueda en Google</option>
+              <option value="LinkedIn">LinkedIn</option>
+              <option value="Recomendación">Recomendación de alguien</option>
+              <option value="Evento / conferencia">Evento o conferencia</option>
+              <option value="Otro">Otro</option>
+            </select>
+          </div>
           <div class="form-group"><label for="reto">Cuéntanos el reto</label><textarea id="reto" name="reto" placeholder="¿Cuál es el principal reto o pregunta estratégica que enfrenta tu empresa hoy?"></textarea></div>
           <button type="submit" class="btn-primary" id="submitBtn" style="width:100%;justify-content:center;font-size:.85rem;padding:1rem">Agendar primera consulta sin costo →</button>
           <p id="formMsg" style="font-size:.71rem;color:var(--muted);text-align:center;margin-top:.5rem;min-height:1.2rem">Respondemos en menos de 24 horas · 100% confidencial</p>
@@ -775,6 +932,7 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
         <li><a href="#servicios">Servicios</a></li>
         <li><a href="#metodo">Método</a></li>
         <li><a href="#perspectiva">Perspectiva</a></li>
+        <li><a href="#faq">Preguntas</a></li>
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </div>
