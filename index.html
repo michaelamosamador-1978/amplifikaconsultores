@@ -317,6 +317,13 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
 .amp-faq-list summary::after{content:"+";color:var(--turquesa);font-size:1.4rem;line-height:1;flex-shrink:0}
 .amp-faq-list details[open] summary::after{content:"–"}
 .amp-faq-list details p{margin:.8rem 0 0;color:var(--muted);line-height:1.7;font-size:.92rem}
+.nav-hl{color:var(--turquesa)!important}
+.escalar-strip{background:linear-gradient(120deg,rgba(14,116,144,.35),var(--navy2) 70%);border-top:1px solid rgba(20,184,166,.25);border-bottom:1px solid rgba(20,184,166,.25);padding:4.5rem 5%}
+.escalar-inner{display:flex;align-items:center;justify-content:space-between;gap:3rem}
+.escalar-inner p{color:var(--muted);line-height:1.85;max-width:640px;font-size:.97rem}
+.escalar-inner .btn-primary{flex-shrink:0}
+@media(max-width:960px){.escalar-inner{flex-direction:column;align-items:flex-start;gap:1.5rem}}
+@media(max-width:1180px) and (min-width:961px){.nav-links{gap:1.3rem}}
 </style>
 <script type="application/ld+json">
 {
@@ -436,6 +443,7 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
     <li><a href="#servicios">Servicios</a></li>
     <li><a href="#metodo">Método</a></li>
     <li><a href="#perspectiva">Perspectiva</a></li>
+    <li><a href="/escalar-sin-depender-del-fundador/" class="nav-hl">Escalar tu empresa</a></li>
     <li><a href="#contacto" class="nav-cta">Agenda consulta</a></li>
   </ul>
   <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobileMenu">
@@ -447,6 +455,7 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
   <a href="#nosotros" onclick="closeMobile()">Nosotros</a>
   <a href="#equipo" onclick="closeMobile()">El equipo</a>
   <a href="#servicios" onclick="closeMobile()">Servicios</a>
+  <a href="/escalar-sin-depender-del-fundador/" onclick="closeMobile()" style="color:var(--turquesa)">Escalar tu empresa</a>
   <a href="#metodo" onclick="closeMobile()">Método</a>
   <a href="#venta-directa" onclick="closeMobile()">Venta Directa</a>
   <a href="#fraccionados" onclick="closeMobile()">Ejec. Fraccionados</a>
@@ -657,6 +666,19 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
       </div>
 
     </div>
+  </div>
+</section>
+
+
+<!-- ══ FRANJA: ESCALAR SIN DEPENDER DEL FUNDADOR ══ -->
+<section id="escalar" class="escalar-strip" aria-label="Escalar sin depender del fundador">
+  <div class="section-inner escalar-inner reveal">
+    <div>
+      <div class="section-label">Para fundadores</div>
+      <h2>¿Tu empresa <em>depende de ti?</em></h2>
+      <p>Si los clientes clave solo quieren tratar contigo y las ventas se detienen cuando te ausentas, llegaste al techo del modelo centrado en el fundador. Te ayudamos a convertir tu negocio en una empresa con metodología propia, equipo, procesos e indicadores que crezca sin depender totalmente de ti.</p>
+    </div>
+    <a href="/escalar-sin-depender-del-fundador/" class="btn-primary">Descubre cómo escalar →</a>
   </div>
 </section>
 
@@ -931,6 +953,7 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
         <li><a href="#nosotros">Nosotros</a></li>
         <li><a href="#equipo">Equipo</a></li>
         <li><a href="#servicios">Servicios</a></li>
+        <li><a href="/escalar-sin-depender-del-fundador/">Escalar tu empresa</a></li>
         <li><a href="#metodo">Método</a></li>
         <li><a href="#perspectiva">Perspectiva</a></li>
         <li><a href="#faq">Preguntas</a></li>
