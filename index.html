@@ -245,6 +245,17 @@ h2 .accent{color:var(--turquesa)}
 .signal-icon{font-size:1.2rem;flex-shrink:0;margin-top:1px}
 .radar-signal h4{font-family:'Poppins',sans-serif;font-size:.88rem;font-weight:600;color:var(--blanco);margin-bottom:.3rem}
 .radar-signal p{font-size:.8rem;font-weight:400;color:var(--muted);line-height:1.65}
+/* Ficha destacada (ocupa todo el ancho y enlaza a un análisis completo) */
+.radar-featured{grid-column:1/-1}
+.radar-featured>p:not(.radar-src){max-width:900px}
+.radar-card.theme-ia::before{background:linear-gradient(90deg,var(--turquesa),var(--dorado))}
+.radar-card.theme-ia .radar-tag{color:var(--turquesa)}
+.radar-links{display:flex;flex-wrap:wrap;gap:.6rem 1.6rem;margin-top:.65rem}
+.radar-link{font-family:'Poppins',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--turquesa);text-decoration:none;transition:color .2s}
+.radar-link:hover,.radar-link:focus{color:var(--dorado-l);outline:none}
+.radar-card p.radar-src{flex:none;font-size:.72rem;line-height:1.6;color:rgba(148,163,184,.75)}
+.radar-src a{color:inherit;text-decoration:underline;text-decoration-color:rgba(20,184,166,.45);text-underline-offset:3px}
+.radar-src a:hover{color:var(--turquesa)}
 
 /* ══ CONTACTO ══ */
 #contacto{background:var(--navy)}
@@ -284,7 +295,7 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
 @media(max-width:960px){
   .nav-links{display:none}
   .hamburger{display:flex}
-  .nosotros-grid,.vd-grid,.frac-grid,.contacto-grid{grid-template-columns:1fr;gap:3rem}
+  .nosotros-grid,.vd-grid,.frac-grid,.contacto-grid{grid-template-columns:minmax(0,1fr);gap:3rem}
   .servicios-grid{grid-template-columns:1fr 1fr}
   .metodo-steps{grid-template-columns:1fr 1fr}
   .value-strip{grid-template-columns:1fr 1fr}
@@ -305,7 +316,10 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
   .footer-top{flex-direction:column}
   .footer-nav{gap:1rem}
   .comp-val span{width:75px!important;font-size:.73rem}
-  .stat-row{grid-template-columns:1fr 1fr 1fr}
+  .stat-row{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .stat-box{padding:1.1rem .4rem}
+  .stat-num{font-size:1.6rem}
+  .stat-desc{font-size:.6rem;letter-spacing:.02em;overflow-wrap:break-word}
   .perspectiva-intro{gap:1.5rem}
   .founder-top{flex-direction:column}
   .founder-photo,.founder-initials{width:72px;height:72px}
@@ -773,11 +787,27 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
       </div>
       <div style="max-width:380px">
         <p class="section-intro" style="margin-bottom:.5rem">Señales del mercado analizadas desde la perspectiva de una PyME que quiere crecer de forma rentable y sostenible.</p>
-        <span class="perspectiva-date">Radar Amplifika · Septiembre 2026</span>
+        <span class="perspectiva-date">Radar Amplifika · Actualizado octubre 2026</span>
       </div>
     </div>
 
     <div class="radar-grid reveal">
+
+      <!-- Ficha · IA: el ROI está en el proceso · Octubre 2026 · enlaza a /ia-con-roi-redisenar-procesos/ -->
+      <article class="radar-card theme-ia radar-featured" id="ia-roi-proceso">
+        <span class="radar-tag">IA &amp; Transformación</span>
+        <h3>Solo 6% gana dinero en serio con IA: la diferencia es el proceso</h3>
+        <p>De acuerdo con McKinsey, 89% de las organizaciones ya usa IA, pero solo 6% obtiene 5% o más de su utilidad operativa gracias a ella, una proporción que lleva dos años sin moverse. Lo que más distingue a ese grupo: 74% rediseñó por completo sus flujos de trabajo, contra 25% del resto. Montar IA sobre el proceso de siempre da el mismo resultado, solo que más rápido.</p>
+        <div class="radar-conv">
+          <span class="radar-conv-label">Conversación Amplifika</span>
+          <p>"¿Qué proceso de tu empresa rediseñarías antes de meterle IA?"</p>
+          <div class="radar-links">
+            <a href="/ia-con-roi-redisenar-procesos/" class="radar-link">Leer el análisis →</a>
+            <a href="#contacto" class="radar-link">Diagnóstico sin costo →</a>
+          </div>
+        </div>
+        <p class="radar-src">Fuente: <a href="https://www.mckinsey.com/capabilities/quantumblack/our-insights/the-state-of-ai" target="_blank" rel="noopener">McKinsey, The State of AI in 2026 (1,719 ejecutivos, 97 países)</a></p>
+      </article>
 
       <div class="radar-card theme-crecimiento">
         <span class="radar-tag">Gestión &amp; Crecimiento</span>
@@ -824,10 +854,10 @@ footer{background:var(--navy);border-top:1px solid var(--border)}
     <!-- Señales adicionales -->
     <div class="radar-bottom reveal">
       <div class="radar-signal">
-        <span class="signal-icon" aria-hidden="true">🤖</span>
+        <span class="signal-icon" aria-hidden="true">🏭</span>
         <div>
-          <h4>IA: el reto ya es ROI, no adopción</h4>
-          <p>McKinsey confirma que las empresas líderes no solo usan más IA — conectan cada caso de uso con indicadores de negocio. La capacitación genérica de IA perdió diferenciación. La pregunta hoy: "¿Tu empresa ya trabaja diferente gracias a la IA?"</p>
+          <h4>La industria repunta, pero no en todos los sectores</h4>
+          <p>La actividad industrial creció 3.5% anual en agosto, impulsada por la construcción (+7.5%), según INEGI. Pero de enero a agosto las manufacturas acumulan una caída de 0.3%. El promedio nacional no es tu mercado: revisa a qué sectores le vendes y dónde está creciendo de verdad tu demanda.</p>
         </div>
       </div>
       <div class="radar-signal">
