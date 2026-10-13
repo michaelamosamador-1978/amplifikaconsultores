@@ -19,6 +19,7 @@ Idiomas: español e inglés
 ## Páginas clave
 
 - [De fundador indispensable a empresa escalable](https://www.amplifikate.com/escalar-sin-depender-del-fundador/): cómo convertir un negocio que depende de su fundador en una empresa con modelo comercial, metodología propia, equipo, procesos e indicadores. Incluye señales de dependencia, los seis frentes de trabajo y la ruta de 90 días.
+- [Solo 6% de las empresas gana dinero en serio con IA: la diferencia es el proceso](https://www.amplifikate.com/ia-con-roi-redisenar-procesos/): análisis (octubre 2026) basado en McKinsey, The State of AI in 2026, Banxico y KPMG. Por qué la IA no genera retorno cuando se monta sobre procesos viejos, qué hace distinto el 6% de empresas que sí gana dinero con ella y cuatro pasos para que una PyME rediseñe un proceso antes de invertir en IA.
 
 ## Servicios
 
